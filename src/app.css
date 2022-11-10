@@ -35,7 +35,7 @@ body{
     border-bottom: 1px solid  #325e6e;
     border-top: 1px solid  #325e6e;
     padding: 20px 0;
-
+    margin-bottom: 40px;
 }
 .added_wrapper .item{
     display: inline-block;
@@ -72,4 +72,30 @@ body{
 }
 .added_wrapper .item .delete:hover{
     color: #690303;
+}
+.active{
+    background-color: rgb(89, 151, 171);
+    color: #fff;
+}
+.graph{
+    border: 1px solid #325e6e;
+    border-top: none;
+    padding: 20px;
+    position: relative;
+}
+.graph button{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: #325e6e;
+    outline: none;
+    border: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
 }

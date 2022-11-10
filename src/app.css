@@ -1,0 +1,75 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 20px;
+}
+.add_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+.add_wrapper p{
+    font-weight: 600;
+}
+.add_wrapper input{
+    padding: 5px;
+    outline:none;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.add_wrapper button{
+    padding: 10px 20px;
+    outline:none;
+    border: none;
+    border-radius: 20px;
+    background-color: #325e6e;
+    color: #fff;
+    cursor: pointer;
+}
+.added_wrapper{
+    border-bottom: 1px solid  #325e6e;
+    border-top: 1px solid  #325e6e;
+    padding: 20px 0;
+
+}
+.added_wrapper .item{
+    display: inline-block;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px 50px;
+    text-align: center;
+    transition: 0.3s;
+    margin-right: 5px;
+}
+.added_wrapper .item:hover{
+    background-color: rgb(89, 151, 171);
+    color: #fff;
+}
+.added_wrapper .item:hover .delete{
+    color: #fff;
+}
+.added_wrapper .item .name{
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+.added_wrapper .item .price{
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-weight: 600;
+}
+.added_wrapper .item .delete{
+    background-color: transparent;
+    color: #325e6e;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.added_wrapper .item .delete:hover{
+    color: #690303;
+}

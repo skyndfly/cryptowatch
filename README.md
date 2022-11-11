@@ -1,5 +1,7 @@
 # cryptowatch
 
+Тренировка в использовании vue js
+
 ## Project setup
 ```
 npm install

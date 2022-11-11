@@ -12,7 +12,7 @@
         :key="t.name"
         :class="{ active: active === t }"
         class="item"
-        @click="active = t"
+        @click="setTicker(t)"
       >
         <p class="name">{{ t.name }} — USD</p>
         <h2 class="price">{{ t.price }}</h2>
@@ -48,7 +48,6 @@ export default {
       tickers: [],
       active: null,
       graph: [],
-      title: null,
     };
   },
   methods: {
@@ -79,7 +78,17 @@ export default {
       let max = Math.max(...this.graph);
       let min = Math.min(...this.graph);
       max = max === min ? max + 20 : max;
-      return this.graph.map((price) => 20 + ((price - min) * 95) / (max - min));
+      let value = this.graph.map(
+        (price) => 20 + ((price - min) * 95) / (max - min)
+      );
+      if (value > 100) {
+        value = 100;
+      }
+      return value;
+    },
+    setTicker: function (ticker) {
+      this.active = ticker;
+      this.graph = [];
     },
   },
 };

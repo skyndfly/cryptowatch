@@ -57,6 +57,7 @@ body{
 .added_wrapper .item .name{
     margin-bottom: 15px;
     font-size: 20px;
+    text-transform: uppercase;
 }
 .added_wrapper .item .price{
     margin-bottom: 25px;
@@ -83,6 +84,7 @@ body{
     border-top: none;
     padding: 20px;
     position: relative;
+    width: 100%;
 }
 .graph button{
     position: absolute;
@@ -104,10 +106,14 @@ body{
     padding-top: 50px;
     height: 300px;
     display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
     align-items: flex-end;
+    flex-direction: row;
     gap: 5px;
+
 }
 .graph_content .item{
-    width: 20px;
+    min-width: 20px;
     background-color: #325e6e;
 }

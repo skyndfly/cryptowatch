@@ -49,6 +49,7 @@ body{
 .added_wrapper .item:hover{
     background-color: rgb(89, 151, 171);
     color: #fff;
+    cursor: pointer;
 }
 .added_wrapper .item:hover .delete{
     color: #fff;
@@ -98,4 +99,15 @@ body{
     height: 25px;
     border-radius: 50%;
     cursor: pointer;
+}
+.graph_content{
+    padding-top: 50px;
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+}
+.graph_content .item{
+    width: 20px;
+    background-color: #325e6e;
 }

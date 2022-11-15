@@ -50,21 +50,34 @@ export default {
       graph: [],
     };
   },
+  created() {
+    const tikersData = localStorage.getItem("cryptowatch-list");
+    if (tikersData) {
+      this.tickers = JSON.parse(tikersData);
+      this.tickers.forEach((ticker) => {
+        this.updateData(ticker.name);
+      });
+    }
+  },
   methods: {
-    add() {
-      const newTicker = { name: this.ticker, price: "—" };
-      this.tickers.push(newTicker);
+    updateData: function (tickerName) {
       setInterval(async () => {
         const api = await fetch(
-          `https://min-api.cryptocompare.com/data/price?fsym=${newTicker.name}&tsyms=usd`
+          `https://min-api.cryptocompare.com/data/price?fsym=${tickerName}&tsyms=usd`
         );
         const data = await api.json();
-        this.tickers.find((t) => t.name === newTicker.name).price =
+        this.tickers.find((t) => t.name === tickerName).price =
           data.USD > 1 ? data.USD.toFixed(2) : data.USD.toPrecision(2);
-        if (this.active.name === newTicker.name) {
+        if (this.active.name === tickerName) {
           this.graph.push(data.USD);
         }
       }, 3000);
+    },
+    add() {
+      const newTicker = { name: this.ticker, price: "—" };
+      this.tickers.push(newTicker);
+      localStorage.setItem("cryptowatch-list", JSON.stringify(this.tickers));
+      this.updateData(newTicker.name);
       this.ticker = "";
     },
     deleteTicker(ticker) {

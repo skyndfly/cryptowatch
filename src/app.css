@@ -117,3 +117,33 @@ body{
     min-width: 20px;
     background-color: #325e6e;
 }
+.filter_wrapper{
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    padding: 20px;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+}
+.filter_wrapper input{
+    padding: 10px 5px 3px 5px;
+    border: none;
+    border-bottom: 1px solid #1e94b8;
+    outline: none;
+}
+.pagination_wrapper{
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    padding: 20px;
+    justify-content: flex-end;
+}
+.pagination_wrapper button{
+    padding: 10px 20px;
+    outline:none;
+    border: none;
+    border-radius: 20px;
+    background-color: #1e94b8;
+    color: #fff;
+    cursor: pointer;
+}

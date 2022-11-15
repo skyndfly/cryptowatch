@@ -6,9 +6,17 @@
   </div>
 
   <template v-if="tickers.length">
+    <div class="filter_wrapper">
+      <p>: Фильтр</p>
+      <input v-model="filter" type="text" />
+    </div>
+    <div class="pagination_wrapper">
+      <button>Назад</button>
+      <button>Вперед</button>
+    </div>
     <div class="added_wrapper">
       <div
-        v-for="t in tickers"
+        v-for="t in filteredList()"
         :key="t.name"
         :class="{ active: active === t }"
         class="item"
@@ -48,6 +56,7 @@ export default {
       tickers: [],
       active: null,
       graph: [],
+      filter: "",
     };
   },
   created() {
@@ -60,6 +69,9 @@ export default {
     }
   },
   methods: {
+    filteredList: function () {
+      return this.tickers.filter((tisker) => tisker.name.includes(this.filter));
+    },
     updateData: function (tickerName) {
       setInterval(async () => {
         const api = await fetch(
